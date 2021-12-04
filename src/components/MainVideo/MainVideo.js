@@ -10,6 +10,7 @@ function MainVideo(props){
           <video src={props.selectedVideo.video}>
             Your browser does not support the video tag.
           </video>
+          
           <h1>{props.selectedVideo.title}</h1>
           <div>
             <div>
