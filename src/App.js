@@ -4,6 +4,7 @@ import videosData from "../src/data/videos.json"
 import videoDetailsData from "../src/data/video-details.json"
 import MainVideo from "./components/MainVideo/MainVideo";
 import SideVideos from "./components/SideVideos/SideVideos";
+import MainVideoDetails from "./components/MainVideoDetails/MainVideoDetails"
 
 
 
@@ -25,6 +26,7 @@ class App extends Component {
       <>
         <Header />
         <MainVideo selectedVideo={this.state.selectedVideo} />
+        <MainVideoDetails selectedVideo={this.state.selectedVideo} />
         <SideVideos
           videos={filteredVideosData}
           onVideoSelect={this.handleVideoSelect}
