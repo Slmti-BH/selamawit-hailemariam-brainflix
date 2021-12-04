@@ -1,16 +1,32 @@
 import { Component } from "react";
-import "./App.css";
 import Header from "./components/Header/Header";
-// import videosData from "../src/data/videos.json"
+import videosData from "../src/data/videos.json"
+import videoDetailsData from "../src/data/video-details.json"
+import MainVideo from "./components/MainVideo/MainVideo";
+import SideVideos from "./components/SideVideos/SideVideos";
+
 
 class App extends Component {
-  // state={
-  //   videos:videosData
-  // }
-  render(){
-  return <Header />;
-  // <MainVideo />
-  // <SideVideo />
+  state = {
+    videos: videosData,
+    selectedVideo: videoDetailsData[0],
+  };
+  handleVideoSelect=(id)=> {
+    this.setState({
+      selectedVideo: videoDetailsData.find((video) => video.id === id),
+    });
+  }
+  render() {
+    return (
+      <>
+        <Header />
+        <MainVideo selectedVideo={this.state.selectedVideo} />
+        <SideVideos
+          videos={videosData}
+          onVideoSelect={this.handleVideoSelect}
+        />
+      </>
+    );
   }
 }
 
