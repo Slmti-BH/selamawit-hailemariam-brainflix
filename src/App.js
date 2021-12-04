@@ -17,12 +17,15 @@ class App extends Component {
     });
   }
   render() {
+    const filteredVideosData = videosData.filter(
+      (video) => video.id !== this.state.selectedVideo.id
+    );
     return (
       <>
         <Header />
         <MainVideo selectedVideo={this.state.selectedVideo} />
         <SideVideos
-          videos={videosData}
+          videos={filteredVideosData}
           onVideoSelect={this.handleVideoSelect}
         />
       </>
