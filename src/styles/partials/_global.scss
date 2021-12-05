@@ -1,10 +1,12 @@
-
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'avenir', sans-serif;
+  font-family: "avenir", Arial, Helvetica, sans-serif;
+  
 }
