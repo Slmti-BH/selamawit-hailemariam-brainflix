@@ -1,4 +1,3 @@
-
 function MainVideo(props) {
   console.log(props);
   return (
@@ -11,3 +10,4 @@ function MainVideo(props) {
 }
 
 export default MainVideo;
+ 
