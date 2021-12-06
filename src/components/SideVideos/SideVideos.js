@@ -1,11 +1,12 @@
 import VideoCard from "../VideoCard/VideoCard"
-
+import "./SideVideos.scss";
 function SideVideos(props){
     console.log(props)
     return (
-      <section>
-        <h2>NEXT VIDEOS</h2>
-        {props.videos.map(video=>{
+      <section className="side-videos">
+        <h2 className="side-videos__title">NEXT VIDEOS</h2>
+        <div className="side-videos__container">
+          {props.videos.map((video) => {
             return (
               <VideoCard
                 key={video.id}
@@ -16,10 +17,10 @@ function SideVideos(props){
                 onVideoSelect={props.onVideoSelect}
               />
             );
-        })}
-      
+          })}
+        </div>
       </section>
-    )
+    );
 }
 
 export default SideVideos;

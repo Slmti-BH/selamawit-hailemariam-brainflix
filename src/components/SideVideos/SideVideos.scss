@@ -1,0 +1,19 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.side-videos {
+  &__title {
+    font-size: 18px;
+    color: $primary-sliver;
+    margin:1.25rem 1rem;
+    @include tablet{
+      margin:1.25rem 40px;
+    }
+  }
+  &__container{
+    display: flex;
+    flex-direction: column;
+  }
+}

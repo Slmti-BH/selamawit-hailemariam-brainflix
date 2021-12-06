@@ -1,23 +1,26 @@
-const VideoCard=(props)=>{
+import "./VideoCard.scss";
+
+
+const VideoCard = (props) => {
   console.log(props);
-  const handleVideoSelect=event=>{
+  const handleVideoSelect = (event) => {
     event.preventDefault();
     props.onVideoSelect(props.id);
-  }
+  };
 
   return (
-    <article>
-      <button onClick={handleVideoSelect}>
-        <div>
-          <img src={props.src} alt="" />
-          <div>
-            <h3>{props.title}</h3>
-            <p>{props.channel}</p>
-          </div>
+    <article className="video-card" onClick={handleVideoSelect}>
+      <div className="video-card__container">
+        <div className="video-card__image-container">
+          <img className="video-card__image" src={props.src} alt="" />
         </div>
-      </button>
+        <div className="video-card__details-wrapper">
+          <h3 className="video-card__title">{props.title}</h3>
+          <p className="video-card__text">{props.channel}</p>
+        </div>
+      </div>
     </article>
   );
-}
+};
 
 export default VideoCard;
