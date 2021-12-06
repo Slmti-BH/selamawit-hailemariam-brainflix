@@ -15,9 +15,18 @@
     margin: 0 40px;
     padding-top: 1.5rem;
   }
+  @include desktop{
+    margin: 0;
+    margin-left: 6.5rem;
 
-  // vertical-align: middle;
-  // align-items:flex-start;
+  }
+  &__details{
+    @include desktop{
+      margin-right: 1rem;
+    }
+  }
+
+
 
   &__image {
     width: 36px;

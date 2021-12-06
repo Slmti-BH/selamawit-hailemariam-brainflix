@@ -4,6 +4,9 @@
 @use "../../styles/partials/global" as *;
 
 .main-video-details {
+  @include desktop{
+    border-right: 3px solid $secondary-mercury;
+  }
   &__title {
     color: $primary-black;
     margin: 1rem;
@@ -11,6 +14,9 @@
       margin: 1.5rem 40px;
       font-size: 2rem;
       margin-bottom: 0.5rem;
+    }
+    @include desktop{
+      margin: 1.5rem 0 1rem 6.5rem;
     }
   }
   &__wrapper {
@@ -28,6 +34,11 @@
       border-bottom: 2px solid $secondary-mercury;
       padding-bottom: 0;
       margin-bottom: 2rem;
+    }
+    @include desktop{
+      margin: 0 0 0 6.5rem;
+      padding-bottom: 0.5rem;
+      
     }
   }
   &__subtitle {
@@ -68,6 +79,9 @@
     @include tablet {
       margin: 0 40px 1.5rem;
     }
+    @include desktop{
+      margin: 1.8rem 1rem 1.5rem 6.5rem;
+    }
   }
   &__comments-count {
     font-weight: 700;
@@ -83,5 +97,8 @@
   }
   &__views-likes-wrapper {
     @extend .main-video-details__title-date-wrapper;
+    @include desktop{
+      margin-right: 1rem;
+    }
   }
 }
