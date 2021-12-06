@@ -1,0 +1,87 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.main-video-details {
+  &__title {
+    color: $primary-black;
+    margin: 1rem;
+    @include tablet {
+      margin: 1.5rem 40px;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__wrapper {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid $secondary-mercury;
+    border-bottom: 2px solid $secondary-mercury;
+    padding: 0.5rem 0;
+    @include tablet {
+      margin: 0 40px;
+      border: none;
+      border-bottom: 2px solid $secondary-mercury;
+      padding-bottom: 0;
+      margin-bottom: 2rem;
+    }
+  }
+  &__subtitle {
+    margin: 0;
+    font-size: 1rem;
+    color: $primary-black;
+    padding: 0;
+    height: 25px;
+    @include tablet {
+      margin-right: 1.5rem;
+      height: 30px;
+    }
+  }
+  &__date {
+    color: $primary-sliver;
+  }
+  &__views {
+    display: block;
+    height: 25px;
+    color: $primary-sliver;
+    background-image: url("../../assets/images/icons/views.svg");
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    @include tablet {
+      margin-right: 1.5rem;
+      height: 30px;
+    }
+  }
+  &__likes {
+    display: block;
+    color: $primary-sliver;
+    background-image: url("../../assets/images/icons/likes.svg");
+    background-repeat: no-repeat;
+    padding-left: 30px;
+  }
+  &__description-container {
+    margin: 0 1rem;
+    @include tablet {
+      margin: 0 40px 1.5rem;
+    }
+  }
+  &__comments-count {
+    font-weight: 700;
+    @include tablet {
+      margin-top: 2rem;
+    }
+  }
+  &__title-date-wrapper {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__views-likes-wrapper {
+    @extend .main-video-details__title-date-wrapper;
+  }
+}

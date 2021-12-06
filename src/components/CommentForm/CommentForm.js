@@ -1,15 +1,25 @@
+import "./CommentForm.scss";
 import ProfileImageContainer from "../ProfileImageContainer/ProfileImageContainer";
 
 function CommentForm(){
     return (
-      <section>
-        <ProfileImageContainer />
-        <div>
-          <h2>JOIN THE CONVERSATION</h2>
-          <form action="" >
-              <textarea name="" id="" cols="30" rows="4">Add a new comment</textarea>
-              <button>COMMENT</button>
-          </form>
+      <section className="comment-form-section">
+        <h2 className="comment-form-section__title">JOIN THE CONVERSATION</h2>
+        <div className="comment-form-section__wrapper">
+          <ProfileImageContainer />
+          <div className="comment-form-section__form-container">
+            <form className="comment-form-section__form" action="">
+              <textarea
+                placeholder="Add a new comment"
+                className="comment-form-section__form-textarea"
+                name=""
+                id=""
+              ></textarea>
+              <button className="comment-form-section__form-button">
+                COMMENT
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     );

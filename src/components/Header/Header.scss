@@ -14,20 +14,18 @@
       flex-direction: row;
       align-items: center;
     }
-    @include desktop{
-       margin: 0 6.5rem;
-       padding-top: 2rem;  
-       padding-bottom: 1rem;
+    @include desktop {
+      margin: 0 6.5rem;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
     }
-
   }
   &__logo {
     height: 25px;
     margin-bottom: 1rem;
-    @include tablet{
-        margin: 0;
+    @include tablet {
+      margin: 0;
     }
-    
   }
   &__form-container {
     display: flex;
@@ -37,7 +35,7 @@
     margin-bottom: 1rem;
     @include tablet {
       margin-left: auto;
-       margin-bottom: 0;
+      margin-bottom: 0;
     }
   }
   &__form {
@@ -56,15 +54,21 @@
     border-radius: 5px;
     font-family: "avenir", sans-serif;
     color: $secondary-dark-black;
-    outline: none;
+    
     &::placeholder {
       color: $secondary-dark-black;
     }
+    &:focus {
+      outline-color: $primary-blue;
+    }
+    &:invalid{
+      outline-color: orange;
+    }
     background: url("../../assets/images/icons/search.svg") no-repeat
       $secondary-alabaster 1rem 0.5rem;
-      @include tablet{
-          height: 40px;
-      }
+    @include tablet {
+      height: 40px;
+    }
   }
 
   &__image-container-top {
@@ -102,6 +106,9 @@
     color: $primary-white;
     background: url("../../assets/images/icons/upload.svg") no-repeat
       $primary-blue 1rem 0.5rem;
+    &:hover {
+      background-color: $secondary-dark-blue;
+    }
     @include tablet {
       margin-right: 1.5rem;
       width: 170px;

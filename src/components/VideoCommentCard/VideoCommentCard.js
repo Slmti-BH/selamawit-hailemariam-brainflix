@@ -4,8 +4,8 @@ import placeholderImage from "../../assets/images/images/image-placeholder.jpg";
 function VideoCommentCard(props) {
    const date = new Date(props.timestamp);
    const formattedDate = [
-     date.getDate(),
      date.getMonth() + 1,
+     date.getDate(),
      date.getUTCFullYear(),
    ].join("/");
 
