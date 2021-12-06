@@ -1,14 +1,15 @@
 import CommentForm from "../CommentForm/CommentForm";
-import VideoCommentCard from "../VideoCommentCard/VideoCommentCard"
+import VideoCommentCard from "../VideoCommentCard/VideoCommentCard";
 import "./MainVideoDetails.scss";
 
 function MainVideoDetails(props) {
-    let date = new Date(props.selectedVideo.timestamp);
-    const formattedDate = [
-      date.getMonth() + 1,
-      date.getDate(),
-      date.getUTCFullYear(),
-    ].join("/");
+  console.log(props);
+  let date = new Date(props.selectedVideo.timestamp);
+  const formattedDate = [
+    date.getMonth() + 1,
+    date.getDate(),
+    date.getUTCFullYear(),
+  ].join("/");
   return (
     <section className="main-video-details">
       <h1 className="main-video-details__title">{props.selectedVideo.title}</h1>
@@ -43,6 +44,7 @@ function MainVideoDetails(props) {
             return (
               <VideoCommentCard
                 name={comment.name}
+                key={comment.name}
                 timestamp={comment.timestamp}
                 commentContent={comment.comment}
               />

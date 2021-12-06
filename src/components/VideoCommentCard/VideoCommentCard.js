@@ -1,7 +1,9 @@
+// // import all files here and uuid for key value
 import "./VideoCommentCard.scss";
 import placeholderImage from "../../assets/images/images/image-placeholder.jpg";
 
 function VideoCommentCard(props) {
+  console.log(props);
    const date = new Date(props.timestamp);
    const formattedDate = [
      date.getMonth() + 1,
@@ -10,7 +12,7 @@ function VideoCommentCard(props) {
    ].join("/");
 
   return (
-    <article className="comment-card">
+    <article className="comment-card" >
       <img className="comment-card__image" src={placeholderImage} alt="" />
 
       <div className="comment-card__details">

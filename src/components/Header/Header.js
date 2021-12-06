@@ -1,3 +1,4 @@
+// import all files here
 import brainFlixLogo from "../../assets/images/logo/BrainFlix-logo.svg";
 import "./Header.scss";
 

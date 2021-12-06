@@ -1,3 +1,4 @@
+// import all files here
 import "./CommentForm.scss";
 import ProfileImageContainer from "../ProfileImageContainer/ProfileImageContainer";
 

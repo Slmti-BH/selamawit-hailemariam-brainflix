@@ -14,10 +14,3 @@
   }
 }
 
-// mixin for common flex property
-@mixin flex($justify-content, $align-items, $flex-direction: row) {
-  display: flex;
-  justify-content: $justify-content;
-  align-items: $align-items;
-  flex-direction: $flex-direction;
-}

@@ -15,18 +15,15 @@
     margin: 0 40px;
     padding-top: 1.5rem;
   }
-  @include desktop{
+  @include desktop {
     margin: 0;
     margin-left: 6.5rem;
-
   }
-  &__details{
-    @include desktop{
+  &__details {
+    @include desktop {
       margin-right: 1rem;
     }
   }
-
-
 
   &__image {
     width: 36px;

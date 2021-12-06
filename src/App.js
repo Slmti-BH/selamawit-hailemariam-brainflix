@@ -5,7 +5,7 @@ import videoDetailsData from "../src/data/video-details.json";
 import MainVideo from "./components/MainVideo/MainVideo";
 import SideVideos from "./components/SideVideos/SideVideos";
 import MainVideoDetails from "./components/MainVideoDetails/MainVideoDetails";
-import "./App.scss"
+import "./App.scss";
 
 class App extends Component {
   state = {
@@ -22,7 +22,7 @@ class App extends Component {
       (video) => video.id !== this.state.selectedVideo.id
     );
     return (
-      <>
+      <div>
         <Header />
 
         <MainVideo selectedVideo={this.state.selectedVideo} />
@@ -33,7 +33,7 @@ class App extends Component {
             onVideoSelect={this.handleVideoSelect}
           />
         </div>
-      </>
+      </div>
     );
   }
 }
