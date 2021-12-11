@@ -1,4 +1,5 @@
 // import all files here
+import {Link} from "react-router-dom";
 import brainFlixLogo from "../../assets/images/logo/BrainFlix-logo.svg";
 import "./Header.scss";
 
@@ -6,11 +7,13 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <img
-          className="header__logo"
-          src={brainFlixLogo}
-          alt="BrainFlix Logo"
-        />
+        <Link to="/">
+          <img
+            className="header__logo"
+            src={brainFlixLogo}
+            alt="BrainFlix Logo"
+          />
+        </Link>
         <div className="header__form-container">
           <form className="header__form" action="">
             <input
