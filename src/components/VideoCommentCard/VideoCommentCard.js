@@ -3,7 +3,7 @@ import "./VideoCommentCard.scss";
 import placeholderImage from "../../assets/images/images/image-placeholder.jpg";
 
 function VideoCommentCard(props) {
-  console.log(props);
+  // console.log(props);
    const date = new Date(props.timestamp);
    const formattedDate = [
      date.getMonth() + 1,

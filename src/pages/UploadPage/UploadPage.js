@@ -1,4 +1,3 @@
-import Header from "../../components/Header/Header";
 import videoThumbnail from "../../assets/images/images/Upload-video-preview.jpg";
 import UploadForm from "../../components/UploadForm/UploadForm";
 

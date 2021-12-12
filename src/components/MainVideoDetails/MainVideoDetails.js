@@ -3,7 +3,7 @@ import VideoCommentCard from "../VideoCommentCard/VideoCommentCard";
 import "./MainVideoDetails.scss";
 
 function MainVideoDetails(props) {
-  console.log(props);
+  // console.log(props);
   let date = new Date(props.selectedVideo.timestamp);
   const formattedDate = [
     date.getMonth() + 1,

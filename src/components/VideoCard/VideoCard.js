@@ -2,14 +2,15 @@ import "./VideoCard.scss";
 
 
 const VideoCard = (props) => {
-  console.log(props);
-  const handleVideoSelect = (event) => {
-    event.preventDefault();
-    props.onVideoSelect(props.id);
-  };
+  // console.log(props);
+  // const handleVideoSelect = (event) => {
+  //   event.preventDefault();
+  //   props.onVideoSelect(props.id);
+  // };
+  // onClick = { handleVideoSelect };
 
   return (
-    <article className="video-card" onClick={handleVideoSelect}>
+    <article className="video-card" >
       <div className="video-card__container">
         <div className="video-card__image-container">
           <img className="video-card__image" src={props.src} alt="" />
