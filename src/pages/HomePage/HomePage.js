@@ -32,9 +32,8 @@ class HomePage extends Component {
         this.props.match.params.videoId
           ? (videoToLoad = this.props.match.params.videoId)
           : (videoToLoad = firstVideoId);
-        
-          /*when no video selected use the default video id on homepage*/
-        
+
+        /*when no video selected use the default video id on homepage*/
 
         this.fetchVideoDetails(videoToLoad);
       })
@@ -52,16 +51,15 @@ class HomePage extends Component {
       .catch((err) => {
         console.log(err);
         this.props.history.push("/404");
-        
-          /*when wrong  url is used redirect to page not found  */
-        
+
+        /*when wrong  url is used redirect to page not found  */
       });
   };
 
   componentDidUpdate(prevProps) {
     const prevVideoId = prevProps.match.params.videoId;
     const currVideoId = this.props.match.params.videoId;
-    // fetch details only if the selected video is different from the previous selected video
+    // fetch details only if the selected-video-id is different from the previous selected-video-id
     const videoIdToLoad = currVideoId ? currVideoId : this.state.videos[0].id;
     if (prevVideoId !== currVideoId) {
       this.fetchVideoDetails(videoIdToLoad);

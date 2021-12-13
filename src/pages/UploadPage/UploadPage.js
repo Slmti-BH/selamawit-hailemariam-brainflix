@@ -2,8 +2,6 @@ import videoThumbnail from "../../assets/images/images/Upload-video-preview.jpg"
 import "./UploadPage.scss";
 
 function UploadPage(props) {
-  console.log(props);
-
   // on uploading a video
   const handlePublish = () => {
     alert("Video published.");

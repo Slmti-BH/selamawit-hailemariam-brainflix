@@ -7,6 +7,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
+        {/* use Link to home on clicking the logo */}
         <Link to="/" className="header__logo-link">
           <img
             className="header__logo"

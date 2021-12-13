@@ -29,7 +29,7 @@
     border-bottom: 2px solid $secondary-mercury;
     padding: 0.5rem 0;
     @include tablet {
-      margin: 0 40px;
+      margin: 0 2.5rem;
       border: none;
       border-bottom: 2px solid $secondary-mercury;
       padding-bottom: 0;
@@ -46,10 +46,10 @@
     font-size: 1rem;
     color: $primary-black;
     padding: 0;
-    height: 25px;
+    height: 1.563rem;
     @include tablet {
       margin-right: 1.5rem;
-      height: 30px;
+      height: 1.875rem;
     }
   }
   &__date {
@@ -57,14 +57,14 @@
   }
   &__views {
     display: block;
-    height: 25px;
+    height: 1.563rem;
     color: $primary-sliver;
     background-image: url("../../assets/images/icons/views.svg");
     background-repeat: no-repeat;
     padding-left: 30px;
     @include tablet {
       margin-right: 1.5rem;
-      height: 30px;
+      height: 1.875rem;
     }
   }
   &__likes {
@@ -72,12 +72,12 @@
     color: $primary-sliver;
     background-image: url("../../assets/images/icons/likes.svg");
     background-repeat: no-repeat;
-    padding-left: 30px;
+    padding-left: 1.875rem;
   }
   &__description-container {
     margin: 0 1rem;
     @include tablet {
-      margin: 0 40px 1.5rem;
+      margin: 0 2.5rem 1.5rem;
     }
     @include desktop{
       margin: 1.8rem 1rem 1.5rem 6.5rem;

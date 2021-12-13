@@ -6,7 +6,7 @@
 .video-card {
   margin: 0 1rem 1rem;
   @include tablet{
-   margin: 0 40px 2rem;   
+   margin: 0 2.5rem 2rem;   
   }
   &__container {
     display: flex;
@@ -15,22 +15,22 @@
   }
   &__image-container {
     background-color: $secondary-mercury;
-    width: 160px;
+    width: 10rem;
     height: 80px;
     padding: 0;
     margin-right: 1rem;
     @include tablet{
       margin-right: 2rem;  
-        width: 180px;
-    height: 100px;
+        width: 11.25rem;
+    height: 6.25rem;
     }
   }
   &__details-wrapper {
-    height: 80px;
-    width: 160px;
+    height: 5rem;
+    width: 10prem;
      @include tablet{
-    width: 180px;
-    height: 100px;
+    width: 11.25rem;
+    height: 6.25rem;
     }
   }
   &__image {
@@ -44,11 +44,11 @@
   }
   &__title {
     margin: 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: $primary-black;
   }
   &__text {
-    font-size: 13px;
+    font-size: 0.813rem;
     margin-bottom: 0;
   }
   &__details-wrapper{
