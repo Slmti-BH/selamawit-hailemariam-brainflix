@@ -9,30 +9,33 @@ import { BrainFlix_URL } from "../../App";
 import "./HomePage.scss";
 
 class HomePage extends Component {
+  // set state to be empty/null
   state = {
     videos: [],
     selectedVideo: null,
-  
   };
 
   componentDidMount() {
+    // get data from AP and set in state
     axios
       .get(`${BrainFlix_URL}/videos?api_key=${API_KEY}`)
       .then((response) => {
-        // console.log(response);
         this.setState({
           videos: response.data,
         });
         return response.data[0].id;
       })
       .then((firstVideoId) => {
+        // firstVideoId has value of response.data[0].id from previous .then
         let videoToLoad;
-
+        // if video selected, load the selected video
         this.props.match.params.videoId
           ? (videoToLoad = this.props.match.params.videoId)
           : (videoToLoad = firstVideoId);
+        
+          /*when no video selected use the default video id on homepage*/
+        
 
-        // console.log(videoToLoad);
         this.fetchVideoDetails(videoToLoad);
       })
       .catch((err) => console.log(err));
@@ -49,22 +52,24 @@ class HomePage extends Component {
       .catch((err) => {
         console.log(err);
         this.props.history.push("/404");
+        
+          /*when wrong  url is used redirect to page not found  */
+        
       });
   };
 
   componentDidUpdate(prevProps) {
-    //   console.log(this.props);
     const prevVideoId = prevProps.match.params.videoId;
     const currVideoId = this.props.match.params.videoId;
-
+    // fetch details only if the selected video is different from the previous selected video
     const videoIdToLoad = currVideoId ? currVideoId : this.state.videos[0].id;
     if (prevVideoId !== currVideoId) {
       this.fetchVideoDetails(videoIdToLoad);
     }
-    //   console.log(videoIdToLoad);
   }
 
   render() {
+    // to filter out the selected video from the side-videos
     let filteredVideosData;
     this.state.selectedVideo === null
       ? (filteredVideosData = this.state.videos.filter(
@@ -74,20 +79,22 @@ class HomePage extends Component {
           (video) => video.id !== this.state.selectedVideo.id
         ));
 
-
     return (
       <div>
+        {/* main video component */}
         {this.state.selectedVideo ? (
           <MainVideo selectedVideo={this.state.selectedVideo} />
         ) : (
-          <p>Loading...</p>
+          <h1 className="home-page__message">Loading...</h1>
         )}
-        <div className="video-detail-videos-container">
+        <div className="home-page__video-detail-videos-container">
+          {/* main video details component */}
           {this.state.selectedVideo ? (
             <MainVideoDetails selectedVideo={this.state.selectedVideo} />
           ) : (
-            <p>Loading...</p>
+            <h1 className="home-page__message">Loading...</h1>
           )}
+          {/*side videos component */}
           <SideVideos
             videos={filteredVideosData}
             onVideoSelect={this.fetchVideoDetails}
@@ -95,10 +102,7 @@ class HomePage extends Component {
         </div>
       </div>
     );
-
- 
   }
 }
 
 export default HomePage;
-

@@ -2,12 +2,6 @@ import "./VideoCard.scss";
 
 
 const VideoCard = (props) => {
-  // console.log(props);
-  // const handleVideoSelect = (event) => {
-  //   event.preventDefault();
-  //   props.onVideoSelect(props.id);
-  // };
-  // onClick = { handleVideoSelect };
 
   return (
     <article className="video-card" >

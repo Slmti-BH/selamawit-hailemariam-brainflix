@@ -3,10 +3,25 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-.video-detail-videos-container{
+.home-page {
+  &__video-detail-videos-container {
     display: flex;
     flex-direction: column;
-    @include desktop{
-       flex-direction: row; 
+    @include desktop {
+      flex-direction: row;
     }
+  }
+  &__message {
+    font-family: "avenir", sans-serif;
+    margin-left: 1rem;
+    font-size: 1.125rem;
+    color: $primary-sliver;
+    @include tablet{
+     margin-left: 2.5rem;   
+    }
+    @include desktop{
+       margin-left: 6.5rem; 
+          
+    }
+  }
 }

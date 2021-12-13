@@ -1,5 +1,4 @@
 function MainVideo(props) {
-  // console.log(props);
   return (
     <div>
       <video
