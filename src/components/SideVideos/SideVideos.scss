@@ -4,19 +4,24 @@
 @use "../../styles/partials/global" as *;
 
 .side-videos {
-  @include desktop{
-    margin-right:64px ;
+  @include desktop {
+    margin-right: 4rem;
   }
   &__title {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: $primary-sliver;
-    margin:1.25rem 1rem;
-    @include tablet{
-      margin:1.25rem 40px;
+    margin: 1.25rem 1rem;
+    @include tablet {
+      margin: 1.25rem 2.5rem;
     }
+   
   }
-  &__container{
+  &__container {
     display: flex;
     flex-direction: column;
+  }
+  &__link {
+    text-decoration: none;
+    color: $primary-black;
   }
 }
