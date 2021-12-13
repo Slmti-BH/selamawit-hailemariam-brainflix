@@ -21,6 +21,9 @@
       padding-bottom: 1rem;
     }
   }
+  &__logo-link {
+    align-self: center;
+  }
   &__logo {
     height: 1.5625rem;
     margin-bottom: 1rem;
@@ -55,14 +58,14 @@
     border-radius: 5px;
     font-family: "avenir", sans-serif;
     color: $secondary-dark-black;
-    
+
     &::placeholder {
       color: $secondary-dark-black;
     }
     &:focus {
       outline-color: $primary-blue;
     }
-    &:invalid{
+    &:invalid {
       outline-color: orange;
     }
     background: url("../../assets/images/icons/search.svg") no-repeat
@@ -99,6 +102,7 @@
   }
   &__button {
     outline: none;
+    width: 100%;
     border: none;
     border-radius: 4px;
     height: 36px;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import videosData from "../../data/videos.json";
-// import videoDetailsData from "../../data/video-details.json";
+
 import MainVideo from "../../components/MainVideo/MainVideo";
 import SideVideos from "../../components/SideVideos/SideVideos";
 import MainVideoDetails from "../../components/MainVideoDetails/MainVideoDetails";
@@ -13,6 +12,7 @@ class HomePage extends Component {
   state = {
     videos: [],
     selectedVideo: null,
+  
   };
 
   componentDidMount() {
@@ -27,11 +27,11 @@ class HomePage extends Component {
       })
       .then((firstVideoId) => {
         let videoToLoad;
-        
-          this.props.match.params.videoId
-            ? videoToLoad = this.props.match.params.videoId
-            : videoToLoad = firstVideoId;
-        
+
+        this.props.match.params.videoId
+          ? (videoToLoad = this.props.match.params.videoId)
+          : (videoToLoad = firstVideoId);
+
         // console.log(videoToLoad);
         this.fetchVideoDetails(videoToLoad);
       })
@@ -46,7 +46,10 @@ class HomePage extends Component {
           selectedVideo: response.data,
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        this.props.history.push("/404");
+      });
   };
 
   componentDidUpdate(prevProps) {
@@ -70,17 +73,8 @@ class HomePage extends Component {
       : (filteredVideosData = this.state.videos.filter(
           (video) => video.id !== this.state.selectedVideo.id
         ));
-    // if (this.state.selectedVideo === null) {
-    //   filteredVideosData = this.state.videos.filter(
-    //     (video) => video.id !== this.state.videos[0].id
-    //   );
-    // } else {
-    //   filteredVideosData = this.state.videos.filter(
-    //     (video) => video.id !== this.state.selectedVideo.id
-    //   );
-    // }
 
-    //   console.log(filteredVideosData);
+
     return (
       <div>
         {this.state.selectedVideo ? (
@@ -102,55 +96,9 @@ class HomePage extends Component {
       </div>
     );
 
-    // const filteredVideosData = videosData.filter(
-    //   (video) => video.id !== this.state.selectedVideo.id
-    // );
-    // return (
-    //   <div>
-
-    //     <MainVideo selectedVideo={this.state.selectedVideo} />
-    //      <div className="video-detail-videos-container">
-    //        <MainVideoDetails selectedVideo={this.state.selectedVideo} />
-    //       <SideVideos
-    // //         videos={filteredVideosData}
-    // //         onVideoSelect={this.handleVideoSelect}
-    // //       />
-    // //     </div>
-    // //   </div>
-    // // );
+ 
   }
 }
 
 export default HomePage;
 
-// class HomePage extends Component {
-//   state = {
-//     videos: videosData,
-//     selectedVideo: videoDetailsData[0],
-//   };
-//   handleVideoSelect = (id) => {
-//     this.setState({
-//       selectedVideo: videoDetailsData.find((video) => video.id === id),
-//     });
-//   };
-//   render() {
-//     const filteredVideosData = videosData.filter(
-//       (video) => video.id !== this.state.selectedVideo.id
-//     );
-//     return (
-//       <div>
-
-//         <MainVideo selectedVideo={this.state.selectedVideo} />
-//         <div className="video-detail-videos-container">
-//           <MainVideoDetails selectedVideo={this.state.selectedVideo} />
-//           <SideVideos
-//             videos={filteredVideosData}
-//             onVideoSelect={this.handleVideoSelect}
-//           />
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default HomePage;
