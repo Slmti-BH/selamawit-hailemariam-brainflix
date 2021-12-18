@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for BrainFlix-sprint-3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slmti-BH/selamawit-hailemariam-brainflix.git"
+  },
+  "author": "Selamawit Hailemariam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slmti-BH/selamawit-hailemariam-brainflix/issues"
+  },
+  "homepage": "https://github.com/Slmti-BH/selamawit-hailemariam-brainflix#readme",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
