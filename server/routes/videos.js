@@ -47,20 +47,18 @@ videosRoutes.get("/:videoId", (req, res) => {
 });
 
 // validation for endpoints to make sure the data required is sent in a request
-const videoValidation=(req,res,next)=>{
-  if(!req.body.title||!req.body.description){
+const videoValidation = (req, res, next) => {
+  if (!req.body.title || !req.body.description) {
     res
       .status(400)
-      .send(
-        "Please make sure to include title, channel and description of the video."
-      );
-  }else{
+      .send("Please make sure to include title and description of the video.");
+  } else {
     next();
   }
-}
+};
 // to post a video
-videosRoutes.post("/", videoValidation, (req,res)=>{
-  const videosData=read();
+videosRoutes.post("/", videoValidation, (req, res) => {
+  const videosData = readData();
 
   // to create video object with id
   const newVideo = {
@@ -68,14 +66,13 @@ videosRoutes.post("/", videoValidation, (req,res)=>{
     title: req.body.title,
     description: req.body.description,
     video: "https://project-2-api.herokuapp.com/stream",
-    image: "https://i.imgur.com/5qyCZrD.jpg"
+    image: "/images/image4.jpeg",
   };
   // update videosData and write to videos.json file
   videosData.push(newVideo);
   writeFile(videosData);
   // send created video
   res.status(201).json(newVideo);
-
-} );
+});
 
 module.exports = videosRoutes;
