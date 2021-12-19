@@ -1,6 +1,10 @@
 const express = require("express");
-const app=express();
+const app = express();
+const videosRoutes = require("./routes/videos");
 
-app.listen(8080, ()=>{
-    console.log("💃 server running on 8080");
+app.use(express.json());
+app.use("/videos", videosRoutes);
+
+app.listen(8080, () => {
+  console.log("💃 server running on 8080");
 });
