@@ -6,7 +6,9 @@ import SideVideos from "../../components/SideVideos/SideVideos";
 import MainVideoDetails from "../../components/MainVideoDetails/MainVideoDetails";
 import { API_KEY } from "../../App";
 import { BrainFlix_URL } from "../../App";
+
 import "./HomePage.scss";
+
 
 class HomePage extends Component {
   // set state to be empty/null
@@ -16,9 +18,10 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    // get data from AP and set in state
+    console.log(`${BrainFlix_URL}/videos`);
+    // get data from server and set in state
     axios
-      .get(`${BrainFlix_URL}/videos?api_key=${API_KEY}`)
+      .get(`${BrainFlix_URL}/videos`)
       .then((response) => {
         this.setState({
           videos: response.data,
@@ -40,9 +43,10 @@ class HomePage extends Component {
       .catch((err) => console.log(err));
   }
 
+  // ?api_key=${API_KEY}
   fetchVideoDetails = (movieId) => {
     axios
-      .get(`${BrainFlix_URL}/videos/${movieId}?api_key=${API_KEY}`)
+      .get(`${BrainFlix_URL}/videos/${movieId}`)
       .then((response) => {
         this.setState({
           selectedVideo: response.data,
