@@ -17,7 +17,7 @@ const writeFile = (videosData) => {
 
 // middle ware to check api_key
 const apiKeyCheck = (req, res, next) => {
-  console.log(API_KEY);
+  const client_API_KEY = req.query.api_key;
   if (client_API_KEY !== API_KEY) {
     res.status(400).send("Please make sure to use the right api_key.");
   } else {

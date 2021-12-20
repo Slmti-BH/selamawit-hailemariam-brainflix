@@ -7,7 +7,7 @@ import "./App.scss";
 
 // pass in variables from env
 export const BrainFlix_URL = process.env.REACT_APP_API_URL;
- 
+export const API_KEY = process.env.REACT_APP_API_KEY;
 
 
 // here create all the route paths
@@ -19,8 +19,8 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/videos/:videoId" component={HomePage} />
         <Route path="/upload" component={UploadPage} />
-        <Route component={PageNotFound} />
         {/*route for all paths different from above*/}
+        <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );

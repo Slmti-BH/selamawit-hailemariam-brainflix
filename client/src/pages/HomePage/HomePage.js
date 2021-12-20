@@ -9,7 +9,6 @@ import { BrainFlix_URL } from "../../App";
 
 import "./HomePage.scss";
 
-
 class HomePage extends Component {
   // set state to be empty/null
   state = {
@@ -18,10 +17,9 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    console.log(`${BrainFlix_URL}/videos`);
     // get data from server and set in state
     axios
-      .get(`${BrainFlix_URL}/videos`)
+      .get(`${BrainFlix_URL}/videos?api_key=${API_KEY}`)
       .then((response) => {
         this.setState({
           videos: response.data,
@@ -43,10 +41,9 @@ class HomePage extends Component {
       .catch((err) => console.log(err));
   }
 
-  // ?api_key=${API_KEY}
   fetchVideoDetails = (movieId) => {
     axios
-      .get(`${BrainFlix_URL}/videos/${movieId}`)
+      .get(`${BrainFlix_URL}/videos/${movieId}?api_key=${API_KEY}`)
       .then((response) => {
         this.setState({
           selectedVideo: response.data,
@@ -55,7 +52,6 @@ class HomePage extends Component {
       .catch((err) => {
         console.log(err);
         this.props.history.push("/404");
-
         /*when wrong  url is used redirect to page not found  */
       });
   };
