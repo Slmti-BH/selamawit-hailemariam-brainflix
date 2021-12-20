@@ -274,12 +274,5 @@
       }
     ],
     "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
-  },
-  {
-    "id": "42690e24-b85b-4a37-beab-5513e4bd1b78",
-    "title": "Test video post.",
-    "description": "To test ...",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "image": "/images/image4.jpeg"
   }
 ]
