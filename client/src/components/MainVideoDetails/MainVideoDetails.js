@@ -3,8 +3,10 @@ import VideoCommentCard from "../VideoCommentCard/VideoCommentCard";
 import "./MainVideoDetails.scss";
 
 function MainVideoDetails(props) {
+  const { title, channel, timestamp, views, likes, description, comments } =
+    props.selectedVideo;
   // to format date
-  let date = new Date(props.selectedVideo.timestamp);
+  let date = new Date(timestamp);
   const formattedDate = [
     date.getMonth() + 1,
     date.getDate(),
@@ -12,35 +14,27 @@ function MainVideoDetails(props) {
   ].join("/");
   return (
     <section className="main-video-details">
-      <h1 className="main-video-details__title">{props.selectedVideo.title}</h1>
+      <h1 className="main-video-details__title">{title}</h1>
       <div className="main-video-details__wrapper">
         <div className="main-video-details__title-date-wrapper">
-          <h3 className="main-video-details__subtitle">
-            By {props.selectedVideo.channel}
-          </h3>
+          <h3 className="main-video-details__subtitle">By {channel}</h3>
           <time className="main-video-details__date">{formattedDate}</time>
         </div>
         <div className="main-video-details__views-likes-wrapper">
-          <span className="main-video-details__views">
-            {props.selectedVideo.views}
-          </span>{" "}
-          <span className="main-video-details__likes">
-            {props.selectedVideo.likes}
-          </span>
+          <span className="main-video-details__views">{views}</span>{" "}
+          <span className="main-video-details__likes">{likes}</span>
         </div>
       </div>
       <div className="main-video-details__description-container">
-        <p className="main-video-details__description-text">
-          {props.selectedVideo.description}
-        </p>
+        <p className="main-video-details__description-text">{description}</p>
         <p className="main-video-details__comments-count">
-          {props.selectedVideo.comments.length} Comments
+          {comments.length} Comments
         </p>
       </div>
       <CommentForm />
       <section>
         <div>
-          {props.selectedVideo.comments.map((comment) => {
+          {comments.map((comment) => {
             return (
               <VideoCommentCard
                 name={comment.name}
