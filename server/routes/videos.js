@@ -1,3 +1,4 @@
+// import all files here
 const { Router } = require("express");
 const fs = require("fs");
 const videosRoutes = Router();
@@ -6,11 +7,13 @@ const { v4: uuid } = require("uuid");
 require("dotenv").config();
 const API_KEY = process.env.API_KEY;
 
+//to from videos.json
 const readData = () => {
   const videosData = fs.readFileSync("./data/videos.json");
   return JSON.parse(videosData);
 };
 
+// to write to videos.json
 const writeFile = (videosData) => {
   fs.writeFileSync("./data/videos.json", JSON.stringify(videosData));
 };
@@ -25,7 +28,7 @@ const apiKeyCheck = (req, res, next) => {
   }
 };
 
-// to get all videos
+//get all videos
 videosRoutes.get("/", apiKeyCheck, (_req, res) => {
   const videosData = readData();
   newVideoData = videosData.map((videoItem) => {
@@ -44,7 +47,7 @@ videosRoutes.get("/", apiKeyCheck, (_req, res) => {
   res.status(200).json(newVideoData);
 });
 
-// to get video details by Id
+//get video details by Id
 videosRoutes.get("/:videoId", apiKeyCheck, (req, res) => {
   const videoData = readData();
   const video = videoData.find((video) => video.id === req.params.videoId);
@@ -64,6 +67,7 @@ const videoValidation = (req, res, next) => {
     next();
   }
 };
+
 // to post a video
 videosRoutes.post("/", videoValidation, apiKeyCheck, (req, res) => {
   const videosData = readData();

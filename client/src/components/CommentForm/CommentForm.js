@@ -5,7 +5,7 @@ import ProfileImageContainer from "../ProfileImageContainer/ProfileImageContaine
 function CommentForm(){
     return (
       <section className="comment-form-section">
-        <h2 className="comment-form-section__title">JOIN THE CONVERSATION</h2>
+        <h1 className="comment-form-section__title">JOIN THE CONVERSATION</h1>
         <div className="comment-form-section__wrapper">
           <ProfileImageContainer />
           <div className="comment-form-section__form-container">
@@ -13,8 +13,7 @@ function CommentForm(){
               <textarea
                 placeholder="Add a new comment"
                 className="comment-form-section__form-textarea"
-                name=""
-                id=""
+               
               ></textarea>
               <button className="comment-form-section__form-button">
                 COMMENT

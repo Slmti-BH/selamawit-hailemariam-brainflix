@@ -9,11 +9,11 @@ const VideoCard = ({ src, title, channel }) => {
           <img
             className="video-card__image"
             src={`${BrainFlix_URL}${src}`}
-            alt=""
+            alt="video thumbnail."
           />
         </div>
         <div className="video-card__details-wrapper">
-          <h3 className="video-card__title">{title}</h3>
+          <h1 className="video-card__title">{title}</h1>
           <p className="video-card__text">{channel}</p>
         </div>
       </div>

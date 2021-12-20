@@ -17,7 +17,7 @@ function MainVideoDetails(props) {
       <h1 className="main-video-details__title">{title}</h1>
       <div className="main-video-details__wrapper">
         <div className="main-video-details__title-date-wrapper">
-          <h3 className="main-video-details__subtitle">By {channel}</h3>
+          <h2 className="main-video-details__subtitle">By {channel}</h2>
           <time className="main-video-details__date">{formattedDate}</time>
         </div>
         <div className="main-video-details__views-likes-wrapper">

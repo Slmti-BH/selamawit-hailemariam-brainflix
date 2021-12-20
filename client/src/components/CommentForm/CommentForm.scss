@@ -42,6 +42,7 @@
     }
   }
   &__form-textarea {
+    resize: none;
     height: 9.375rem;
     width: 100%;
     border: 2px solid $primary-sliver;

@@ -7,8 +7,11 @@
   &[poster] {
     object-fit: cover;
   }
-  height: 50vh;
+  height: 40vh;
   @include tablet {
-    height: 80vh;
+    height: 60vh;
+  }
+  @include desktop {
+    height: 70vh;
   }
 }

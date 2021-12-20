@@ -7,7 +7,7 @@ function SideVideos(props) {
 
   return (
     <section className="side-videos">
-      <h2 className="side-videos__title">NEXT VIDEOS</h2>
+      <h1 className="side-videos__title">NEXT VIDEOS</h1>
       <div className="side-videos__container">
         {props.videos.map((video) => {
           return (

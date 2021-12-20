@@ -64,6 +64,8 @@ class HomePage extends Component {
     if (prevVideoId !== currVideoId) {
       this.fetchVideoDetails(videoIdToLoad);
     }
+    // to move to the top of webpage on selecting a video
+    window.scrollTo(0, 0);
   }
 
   render() {
