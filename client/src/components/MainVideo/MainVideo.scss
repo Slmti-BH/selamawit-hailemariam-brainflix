@@ -1,0 +1,14 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.main-video {
+  &[poster] {
+    object-fit: cover;
+  }
+  height: 50vh;
+  @include tablet {
+    height: 80vh;
+  }
+}

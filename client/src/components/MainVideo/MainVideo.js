@@ -1,10 +1,11 @@
 import { BrainFlix_URL } from "../../App";
 import { API_KEY } from "../../App";
 import  {v4 as uuid}   from "uuid";
+import "./MainVideo.scss"
 
 function MainVideo(props) {
   return (
-    <div>
+    <div className="main-video">
       <video key={uuid()}
         width="100%"
         className="main-video"
